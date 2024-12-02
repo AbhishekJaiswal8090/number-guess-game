@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #354f52;
+        }
+        h1{
+            text-align: center;
+            font-size: 7vw;
+            color:  #84a98c;
+          
+        }
+        h3{
+            text-align: center;
+            font-size: 4vw;
+            color:  black;
+          
+        }
+        p{
+            
+            text-align: center;
+            margin-left: 5vw;
+            font-size: 1.8vw;
+            color: #cad2c5;
+        }
+       div{
+        display: flex;
+        height: 5vh;
+        width: 100%;
+        justify-content: center;
+       }
+       #boldTag{
+        text-align: center;
+        font-size: 4vw;
+        color: black;  
+       }
+    </style>
+</head>
+<body>
+    <h1>Let's Play A Game</h1>
+    <h3>Number Guess Game</h3>
+    <p>So Basically it's an game for which you have to guess the number between 1 to 10 if you'll guess it right it will 
+        congratulate you and also it will hints you whether you're right or wrong something like that okay ! let's play the game
+    </p>
+    <div>
+    <input placeholder="Guess the number" id="input-tag">
+    <button onclick="getNum()">Enter</button>
+    </div>
+    <h4 id="boldTag"></h4>
+    <script>
+        let body = document.querySelector("body");
+        let div = document.querySelector("div");
+        let btn = document.querySelector("button");
+        function getNum(){
+            var inputValue = document.getElementById("input-tag").value;
+            let randomVal = Math.floor(Math.random()*10);
+            let boldtext = document.getElementById("boldTag");
+            boldtext.innerText=`${randomVal}`;
+            if(randomVal === inputValue){
+                alert('congratulation you win against an computer');
+            }
+            else if(inputValue < randomVal){
+                alert('too low');
+            }
+            else{
+                alert('Too high');
+            }
+        }
+    </script>
+</body>
+</html>
